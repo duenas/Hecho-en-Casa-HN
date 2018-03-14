@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|iOS">
+      <Configuration>Debug</Configuration>
+      <Platform>iOS</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-x64">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-x86">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Android">
+      <Configuration>Release</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|iOS">
+      <Configuration>Release</Configuration>
+      <Platform>iOS</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-x64">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-x86">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-ARM">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>70e7acac-3132-4433-b46d-af1b4974a272</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectCapability Include="UseFileGlobs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
+    <VisualStudioVersion>15.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TypeScriptCompileOnSaveEnabled>false</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\ApacheCordovaTools\vs-mda-targets\Microsoft.TypeScript.MDA.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\ApacheCordovaTools\vs-mda-targets\Microsoft.MDA.FileMirroring.targets" />
+  <PropertyGroup>
+    <ProjectUISubcaption>Tools for Apache Cordova</ProjectUISubcaption>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetPlatformIdentifier>MDD</TargetPlatformIdentifier>
+  </PropertyGroup>
+  <Target Name="EnsureBuildPrerequisites">
+    <!-- These errors will trigger if building from inside Visual Studio and requirements could not be determined -->
+    <Error Condition="$(MDAPropertiesEvaluated) == 'true' And $(NodeJsDir) == ''" Text="Path to NodeJs could not be determined. Please check that NodeJs has been installed." />
+    <!-- These errors will trigger if building from outside Visual Studio (e.g. command line) and environment variables have not been set -->
+    <Error Condition="$(MDAPropertiesEvaluated) == '' And $(NodeJsDir) == ''" Text="Path to NodeJs has not been specified. Please check that NodeJs has been installed and set the NodeJsDir environment variable before building." />
+    <!-- Sanity check that things exist in the specified places. These are more likely to fail if building outside Visual Studio and the required environment variables have not been set, or set incorrectly. -->
+    <Error Condition="!Exists('$(NodeJsDir)') Or !Exists('$(NodeJsDir)\node.exe')" Text="The specified NodeJs directory $(NodeJsDir) either does not exist, or does not contain node.exe. Please check that NodeJs has been installed, and set the NodeJsDir variable to the correct directory." />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties />
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <!-- Customize which folders are not shown by default -->
+    <ExcludedItems>bin;bld;platforms;node_modules;simulation;plugins</ExcludedItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="**\**" Exclude="**\platforms\**;**\bin\**;**\bld\**;**\node_modules\**;**\simulation\**;**\plugins\**;.gitignore;HechoenCasaHN.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="www\css\plugins\blueimp\css\blueimp-gallery-indicator.css" />
+    <Content Include="www\css\plugins\blueimp\css\blueimp-gallery-video.css" />
+    <Content Include="www\css\plugins\blueimp\css\blueimp-gallery.css" />
+    <Content Include="www\css\plugins\blueimp\css\blueimp-gallery.min.css" />
+    <Content Include="www\css\plugins\blueimp\css\demo.css" />
+    <Content Include="www\css\plugins\blueimp\img\error.png" />
+    <Content Include="www\css\plugins\blueimp\img\error.svg" />
+    <Content Include="www\css\plugins\blueimp\img\loading.gif" />
+    <Content Include="www\css\plugins\blueimp\img\play-pause.png" />
+    <Content Include="www\css\plugins\blueimp\img\play-pause.svg" />
+    <Content Include="www\css\plugins\blueimp\img\video-play.png" />
+    <Content Include="www\css\plugins\blueimp\img\video-play.svg" />
+    <Content Include="www\css\plugins\bootstrap-markdown\bootstrap-markdown.min.css" />
+    <Content Include="www\css\plugins\bootstrap-rtl\bootstrap-rtl.css" />
+    <Content Include="www\css\plugins\bootstrap-rtl\bootstrap-rtl.css.map" />
+    <Content Include="www\css\plugins\bootstrap-rtl\bootstrap-rtl.min.css" />
+    <Content Include="www\css\plugins\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="www\css\plugins\bootstrapSocial\bootstrap-social.css" />
+    <Content Include="www\css\plugins\bootstrapTour\bootstrap-tour.min.css" />
+    <Content Include="www\css\plugins\c3\c3.min.css" />
+    <Content Include="www\css\plugins\chartist\chartist.min.css" />
+    <Content Include="www\css\plugins\chosen\bootstrap-chosen.css" />
+    <Content Include="www\css\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="www\css\plugins\chosen\chosen-sprite.png" />
+    <Content Include="www\css\plugins\chosen\chosen.css" />
+    <Content Include="www\css\plugins\clockpicker\clockpicker.css" />
+    <Content Include="www\css\plugins\codemirror\ambiance.css" />
+    <Content Include="www\css\plugins\codemirror\codemirror.css" />
+    <Content Include="www\css\plugins\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="www\css\plugins\cropper\cropper.min.css" />
+    <Content Include="www\css\plugins\datapicker\datepicker3.css" />
+    <Content Include="www\css\plugins\dataTables\datatables.min.css" />
+    <Content Include="www\css\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="www\css\plugins\dropzone\basic.css" />
+    <Content Include="www\css\plugins\dropzone\dropzone.css" />
+    <Content Include="www\css\plugins\dualListbox\bootstrap-duallistbox.min.css" />
+    <Content Include="www\css\plugins\footable\fonts\footable.eot" />
+    <Content Include="www\css\plugins\footable\fonts\footable.svg" />
+    <Content Include="www\css\plugins\footable\fonts\footable.ttf" />
+    <Content Include="www\css\plugins\footable\fonts\footable.woff" />
+    <Content Include="www\css\plugins\footable\footable.core.css" />
+    <Content Include="www\css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="www\css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="www\css\plugins\iCheck\custom.css" />
+    <Content Include="www\css\plugins\iCheck\green%402x.png" />
+    <Content Include="www\css\plugins\iCheck\green.png" />
+    <Content Include="www\css\plugins\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="www\css\plugins\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="www\css\plugins\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="www\css\plugins\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="www\css\plugins\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="www\css\plugins\images\sort.png" />
+    <Content Include="www\css\plugins\images\sort_asc.png" />
+    <Content Include="www\css\plugins\images\sort_desc.png" />
+    <Content Include="www\css\plugins\images\sprite-skin-flat.png" />
+    <Content Include="www\css\plugins\images\sprite-skin-flat2.png" />
+    <Content Include="www\css\plugins\images\sprite-skin-nice.png" />
+    <Content Include="www\css\plugins\images\sprite-skin-simple.png" />
+    <Content Include="www\css\plugins\images\spritemap%402x.png" />
+    <Content Include="www\css\plugins\images\spritemap.png" />
+    <Content Include="www\css\plugins\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="www\css\plugins\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="www\css\plugins\ionRangeSlider\ion.rangeSlider.skinNice.css" />
+    <Content Include="www\css\plugins\ionRangeSlider\ion.rangeSlider.skinSimple.css" />
+    <Content Include="www\css\plugins\jasny\jasny-bootstrap.min.css" />
+    <Content Include="www\css\plugins\jqGrid\ui.jqgrid.css" />
+    <Content Include="www\css\plugins\jQueryUI\images\animated-overlay.gif" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-icons_222222_256x240.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-icons_454545_256x240.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-icons_888888_256x240.png" />
+    <Content Include="www\css\plugins\jQueryUI\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="www\css\plugins\jQueryUI\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="www\css\plugins\jQueryUI\jquery-ui.css" />
+    <Content Include="www\css\plugins\jsTree\32px.png" />
+    <Content Include="www\css\plugins\jsTree\39px.png" />
+    <Content Include="www\css\plugins\jsTree\40px.png" />
+    <Content Include="www\css\plugins\jsTree\style.css" />
+    <Content Include="www\css\plugins\jsTree\style.min.css" />
+    <Content Include="www\css\plugins\jsTree\throbber.gif" />
+    <Content Include="www\css\plugins\ladda\ladda-themeless.min.css" />
+    <Content Include="www\css\plugins\ladda\ladda.min.css" />
+    <Content Include="www\css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="www\css\plugins\nouslider\jquery.nouislider.css" />
+    <Content Include="www\css\plugins\select2\select2.min.css" />
+    <Content Include="www\css\plugins\slick\ajax-loader.gif" />
+    <Content Include="www\css\plugins\slick\fonts\slick.eot" />
+    <Content Include="www\css\plugins\slick\fonts\slick.svg" />
+    <Content Include="www\css\plugins\slick\fonts\slick.ttf" />
+    <Content Include="www\css\plugins\slick\fonts\slick.woff" />
+    <Content Include="www\css\plugins\slick\slick-theme.css" />
+    <Content Include="www\css\plugins\slick\slick.css" />
+    <Content Include="www\css\plugins\social-buttons\social-buttons.css" />
+    <Content Include="www\css\plugins\steps\jquery.steps.css" />
+    <Content Include="www\css\plugins\summernote\font\summernote.eot" />
+    <Content Include="www\css\plugins\summernote\font\summernote.ttf" />
+    <Content Include="www\css\plugins\summernote\font\summernote.woff" />
+    <Content Include="www\css\plugins\summernote\summernote-bs3.css" />
+    <Content Include="www\css\plugins\summernote\summernote.css" />
+    <Content Include="www\css\plugins\sweetalert\sweetalert.css" />
+    <Content Include="www\css\plugins\switchery\switchery.css" />
+    <Content Include="www\css\plugins\textSpinners\spinners.css" />
+    <Content Include="www\css\plugins\toastr\toastr.min.css" />
+    <Content Include="www\css\plugins\touchspin\jquery.bootstrap-touchspin.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+</Project>
