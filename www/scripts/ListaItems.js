@@ -6,14 +6,11 @@
     "use strict";
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
-    alert("lista");
-
+  // llama la funcion que obtiene parametros url
     var valores = getGET();
-
+    //asigna valores de url
     var Catego = valores['categoria'];
-
-    alert(Catego);
-
+    //funcion para obtener la url
     function getGET() {
         // capturamos la url
         var loc = document.location.href;
@@ -33,24 +30,13 @@
             return get;
         }
     }
+    // funcion para obtener la url
 
+    //cargar lista de los items segun categoria
 
-    function onDeviceReady() {
-       
-       
-        var prodId = getParameterByName('categoria');
-        document.addEventListener('pause', onPause.bind(this), false);
-        document.addEventListener('resume', onResume.bind(this), false);
-    };
+    //fin cargar lista segun categoria
 
-    function onPause() {
-        // TODO: esta aplicación se ha suspendido. Guarde el estado de la aplicación aquí.
-    };
-
-    function onResume() {
-        // TODO: esta aplicación se ha reactivado. Restaure el estado de la aplicación aquí.
-    };
-
+   
 
    
 
