@@ -6,10 +6,10 @@
     "use strict";
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
-  // llama la funcion que obtiene parametros url
+    // llama la funcion que obtiene parametros url
     var valores = getGET();
     //asigna valores de url
-    var Catego = valores['categoria'];
+    var coditem = valores['id'];
     //funcion para obtener la url
     function getGET() {
         // capturamos la url
@@ -40,21 +40,14 @@
         // Controlar la pausa de Cordova y reanudar eventos
         //alert("Menu");
         CargarLista()
-        document.addEventListener('pause', onPause.bind(this), false);
-        document.addEventListener('resume', onResume.bind(this), false);
+       
     };
 
-    function CargarLista() {
-        //var cadena = "<div class='row'>";
-        //cadena = cadena + ""
-        var cadena = "";
-
-
-        //agregando evento Ajax
-        var cadena1 = "";
-        $.ajax({
+     function CargarLista() {
+         var cadena = "<div class='product-images'>";
+         $.ajax({
             type: "GET",
-            url: "http://localhost:8585/PostItemPortada.aspx?categoria=" + Catego,
+            url: "http://localhost:8585/PosDetalleItem.aspx?id=" + coditem,
             crossDomain: true,
             cache: false,
             contentType: "application/json; charset=utf-8",
@@ -62,35 +55,13 @@
             dataType: "json",
             success: function (result) {
                 $.each(result, function (i, field) {
-                    cadena = cadena + "<div class='row'>";
-                    cadena = cadena + "<div class='col-md-3'>";
-                    cadena = cadena + "<div class='ibox'>";
-                    cadena = cadena + "<div class='ibox-content product-box'>";
-                    cadena = cadena + "<div>";
-                    cadena = cadena + "<img class='border-top' width='300' height='250' src='" + field.portada + "'/>";
-                    cadena = cadena + "</div>";
-                    cadena = cadena + "<div class='product-desc'>";
-                    cadena = cadena + "<a href='#' class='product-name'>" + field.item + "</a>";
-                    cadena = cadena + "<div class='small m-t-xs'>";
-                    cadena = cadena + field.descripcion;
-                    cadena = cadena + "</div>";
-                    cadena = cadena + "<div class='m-t text-righ'>";
-                    cadena = cadena + "<a href='DetalleItem.html?id=" + field.id + "' class='btn btn-xs btn-outline btn-primary'>Ir <i class='fa fa-long-arrow-right'></i> </a>";
+                    cadena = cadena + " <div>";
+                    cadena = cadena + " <div >";
+                    cadena = cadena + " <img class='border-top' width='225' height='250' src='" + field.Imagen + "'/>";
                     cadena = cadena + "</div>";
                     cadena = cadena + "</div>";
-                    cadena = cadena + "</div>";
-                    cadena = cadena + "</div>";
-                    cadena = cadena + "</div>";
-                    cadena = cadena + "</div>";
-
-
-
-
-                   
-
                 });
-
-
+                cadena = cadena + "</div>"
                 $("#divLista").append(cadena);
             },
             error: function (result) {
@@ -98,9 +69,8 @@
             }
         });
     }
-   
 
-   
+
 
 
 
