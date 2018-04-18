@@ -40,7 +40,9 @@
         // Controlar la pausa de Cordova y reanudar eventos
         //alert("Menu");
         CargarLista()
-       
+        Cargarinfo()
+        document.getElementById("btnpedir").addEventListener('click', RegistrarPedido, false)
+
     };
 
      function CargarLista() {
@@ -71,6 +73,84 @@
     }
 
 
+     function Cargarinfo() {
+         var titulo = "";
+         var descripcion = "";
+         $.ajax({
+             type: "GET",
+             url: "http://localhost:8585/PostInfoItem.aspx?id=" + coditem,
+             crossDomain: true,
+             cache: false,
+             contentType: "application/json; charset=utf-8",
+             async: false,
+             dataType: "json",
+             success: function (result) {
+                 $.each(result, function (i, field) {
+                     titulo = field.item;
+                     descripcion = field.descripcion;
+                 });
+                 $("#titulo").append(titulo);
+                 $("#descripcion").append(descripcion);
+
+             },
+             error: function (result) {
+                 alert("Ocurrió un problema. Por favor Comuníquese con el administrador del sistema. Gracias.");
+             }
+         });
+     }
+
+
+
+     function RegistrarPedido() {
+         var nombre = document.getElementById("nombre").value;
+         var telefono = document.getElementById("telefono").value;
+         var talla = document.getElementById("talla").value;
+         var localidad = document.getElementById("localidad").value;
+         if (nombre == "") {
+             alert("Ingrese un nombre!");
+             return false;
+         }
+         if (telefono == "") {
+             alert("Ingrese un telefono!");
+             return false;
+         }
+         if (talla == "") {
+             alert("seleccione una talla!");
+             return false;
+         }
+         if (localidad == "") {
+             alert("Seleccione una localidad!");
+             return false;
+         }
+         var insert = 0;
+         if (confirm("Estas seguro?")) {
+             //agregando evento Ajax
+             $.ajax({
+                 type: "GET",
+                 url: "http://localhost:8585/PostRegistraPedido.aspx?iditem=" + coditem + "&nombre=" + nombre + "&telefono=" + telefono + "&talla=" + talla + "&localidad=" + localidad,
+                 crossDomain: true,
+                 cache: false,
+                 contentType: "application/json; charset=utf-8",
+                 async: false,
+                 dataType: "json",
+                 success: function (result) {
+
+                     alert("!ENSEGUIDA TE LLAMAREMOS!");
+                     document.getElementById("nombre").value = "";
+                     document.getElementById("telefono").value = "";
+                
+                 },
+                 error: function (result) {
+                     alert("Ocurrió un problema. Por favor Comuníquese con el administrador del sistema. Gracias.");
+                 }
+             });
+         }
+     }
+
+
+
+
+  
 
 
 

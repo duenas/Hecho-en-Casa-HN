@@ -52,7 +52,7 @@
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div id="divLista">
-                                      
+
                                         </div>
 
                                         <!--<div class="product-images">
@@ -60,71 +60,71 @@
                                         </div>-->
 
                                     </div>
-                                        <div class="col-md-7">
-                                            <br>
-                                            <h2 class="font-bold m-b-xs">
-                                                Tenis Cafe Castor Gamuzon Alto
-                                            </h2>
-                                            <small>Hecho con Gamuzon deportivo Original, totalmente Costurado.</small>
-                                            <div class="m-t-md">
-                                                <h2 class="product-main-price">Lps.650 <small class="text-muted">Envio Incluido</small> </h2>
+                                    <div class="col-md-7">
+                                        <br>
+                                        <h2 id="titulo" class="font-bold m-b-xs"></h2>
+                                        <small id="descripcion"></small>
+                                        <div class="m-t-md">
+                                            <h2 class="product-main-price">Lps.650 <small class="text-muted">Envio Incluido</small> </h2>
+                                        </div>
+                                        <hr>
+
+                                        <h4>Pedir en Linea</h4>
+
+                                        <div class="small text-muted">
+                                            Ingresa tus datos para completar tu pedido. solo tomara 20 seg.
+
+                                            <br />
+                                            <br />
+                                            <div class="form-group"><label>Nombre</label> <input type="text" id="nombre" placeholder="Nombre" class="form-control"></div>
+                                            <div class="form-group"><label>Telefono</label> <input type="tel" id="telefono" placeholder="Telefono" class="form-control"></div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Talla</label>
+                                                <select id="talla" class="form-control m-b" name="account">
+                                                    <option>37</option>
+                                                    <option>38</option>
+                                                    <option>39</option>
+                                                    <option>40</option>
+                                                    <option>41</option>
+                                                    <option>42</option>
+                                                    <option>43</option>
+                                                    <option>44</option>
+                                                </select>
                                             </div>
-                                            <hr>
-
-                                            <h4>Pedir en Linea</h4>
-
-                                            <div class="small text-muted">
-                                                Ingresa tus datos para completar tu pedido. solo tomara 20 seg.
-
-                                                <br />
-                                                <br />
-                                                <div class="form-group"><label>Nombre</label> <input type="text" placeholder="Nombre" class="form-control"></div>
-                                                <div class="form-group"><label>Telefono</label> <input type="tel" placeholder="Telefono" class="form-control"></div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label">Talla</label>
-                                                    <select class="form-control m-b" name="account">
-                                                        <option>37</option>
-                                                        <option>38</option>
-                                                        <option>39</option>
-                                                        <option>40</option>
-                                                        <option>41</option>
-                                                        <option>42</option>
-                                                        <option>43</option>
-                                                        <option>44</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label">Localidad</label>
-                                                    <select class="form-control m-b" name="account">
-                                                        <option>Tegucigalpa</option>
-                                                        <option>Fuera Tegucigalpa</option>
-                                                    </select>
-                                                </div>
-
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Localidad</label>
+                                                <select id="localidad" class="form-control m-b" name="account">
+                                                    <option value="Tegucigalpa">Tegucigalpa</option>
+                                                    <option value="Fuera Tegucigalpa">Fuera Tegucigalpa</option>
+                                                </select>
                                             </div>
-                                            <dl class="small m-t-md">
-                                                <dt>Politicas de Envio</dt>
-                                                <dd>si ud realiza un pedido en linea nos comunicaremos con ud lo brevemente posible</dd>
-                                                <dt>Contactos</dt>
-                                                <dd>Puede llamarnos o escribirnos al Whatsapp:97083981</dd>
-                                                <dd>Busqueno en facebook como: Hecho en Casa HN</dd>
-                                                <dt>Cantidad vendida:100</dt>
-
-                                            </dl>
-                                            <hr>
-
-                                            <div>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Pedir</button>
-                                                    <button class="btn btn-white btn-sm"><i class="fa fa-phone"></i>Llamar </button>
-                                                    <button class="btn btn-primary btn-sm"><i class="fa fa-share"></i> Compartir</button>
-                                                </div>
-                                            </div>
-
-
 
                                         </div>
+                                        <dl class="small m-t-md">
+                                            <dt>Politicas de Envio</dt>
+                                            <dd>si ud realiza un pedido en linea nos comunicaremos con ud lo brevemente posible</dd>
+                                            <dt>Contactos</dt>
+                                            <dd>Puede llamarnos o escribirnos al Whatsapp:97083981</dd>
+                                            <dd>Busqueno en facebook como: Hecho en Casa HN</dd>
+                                            <dt>Cantidad vendida:100</dt>
+
+                                        </dl>
+                                        <hr>
+
+                                        <div>
+                                            <div class="btn-group">
+                                                <button id="btnpedir" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Pedir</button>
+                                                <a href="tel:+98077551" class="btn btn-white btn-sm  fa fa-phone">9807-7551</a>
+                                                <!--<button type="button" class="btn btn-white btn-sm"><i class="fa fa-phone"></i>Llamar </button>-->
+                                                <!--<button class="btn btn-primary btn-sm"><i class="fa fa-share"></i> Compartir</button>-->
+                                                <!--<button onclick="window.plugins.socialsharing.share('Message and image', null, 'https://www.google.nl/images/srpr/logo4w.png', null)">message and image</button>-->
+                                            </div>
+                                        </div>
+
+
+
                                     </div>
+                                </div>
 
                             </div>
 
@@ -151,10 +151,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/DetalleItem.js"></script>
+    <script type="text/javascript" src="scripts/SocialSharing.js"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
