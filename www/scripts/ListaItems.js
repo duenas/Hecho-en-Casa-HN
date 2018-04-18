@@ -54,7 +54,7 @@
         var cadena1 = "";
         $.ajax({
             type: "GET",
-            url: "http://localhost:8585/PostItemPortada.aspx?categoria=" + Catego,
+            url: "http://192.168.0.11:8585/PostItemPortada.aspx?categoria=" + Catego,
             crossDomain: true,
             cache: false,
             contentType: "application/json; charset=utf-8",

@@ -34,7 +34,7 @@
         var cadena1 = "";
         $.ajax({
             type: "GET",
-            url: "http://localhost:8585/PostCategorias.aspx",
+            url: "http://192.168.0.11:8585/PostCategorias.aspx",
             crossDomain: true,
             cache: false,
             contentType: "application/json; charset=utf-8",

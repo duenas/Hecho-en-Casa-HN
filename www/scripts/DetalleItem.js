@@ -49,7 +49,7 @@
          var cadena = "<div class='product-images'>";
          $.ajax({
             type: "GET",
-            url: "http://localhost:8585/PosDetalleItem.aspx?id=" + coditem,
+            url: "http://192.168.0.11:8585/PosDetalleItem.aspx?id=" + coditem,
             crossDomain: true,
             cache: false,
             contentType: "application/json; charset=utf-8",
@@ -78,7 +78,7 @@
          var descripcion = "";
          $.ajax({
              type: "GET",
-             url: "http://localhost:8585/PostInfoItem.aspx?id=" + coditem,
+             url: "http://192.168.0.11:8585/PostInfoItem.aspx?id=" + coditem,
              crossDomain: true,
              cache: false,
              contentType: "application/json; charset=utf-8",
@@ -127,7 +127,7 @@
              //agregando evento Ajax
              $.ajax({
                  type: "GET",
-                 url: "http://localhost:8585/PostRegistraPedido.aspx?iditem=" + coditem + "&nombre=" + nombre + "&telefono=" + telefono + "&talla=" + talla + "&localidad=" + localidad,
+                 url: "http://192.168.0.11:8585/PostRegistraPedido.aspx?iditem=" + coditem + "&nombre=" + nombre + "&telefono=" + telefono + "&talla=" + talla + "&localidad=" + localidad,
                  crossDomain: true,
                  cache: false,
                  contentType: "application/json; charset=utf-8",
